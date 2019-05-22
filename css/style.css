@@ -1,0 +1,23 @@
+
+*{ margin: 0; padding: 0; }
+li{ list-style-type: none; }
+#bigBackground{ width: 100%; height: 800px; background: url("../img/bigBackground.png"); position: fixed;z-index: -99;background-size: cover; }
+
+#head{ padding: 10px; color: #fff; font-size: 23px; font-weight: bold; position: relative;/* background: red;*/ }
+#head span{ position: absolute; left: 20px; }
+#head b{ width: 0; height: 6px; background: #fff; position: absolute; left: 20px; top: 36px; transition: width 0.5s; transition-timing-function: cubic-bezier(.2,1.04,.94,1); }
+#head a{ position: absolute; right: 10px; color: #fff; text-decoration: none; }
+#head input{ width: 180px; height: 26px; color: #bbb; border: 3px solid #fff; position: absolute; right: 70px; }
+
+#body{ position: relative; top:320px; background: #fff; }
+
+#left{ position: relative;width: 280px; height: 280px; border: 1px solid #aaa; padding: 10px; }
+#left li{  }
+
+#right{ position: relative; width: 1000px; padding: 10px; }
+#right li{  width:240px; height:280px; border: 1px solid #aaa; display: inline-block; }
+
+#foot{  position: relative; top: 600px; padding: 10px; border: 1px solid red; }
+#foot ul{ position: absolute; left: 50%; display: inline-block; }
+#foot li{ width: 30px; height: 30px; background: #fff; border: 1px solid #aaa; text-align: center; line-height: 30px; display: inline-block; }
+#foot .changePage{ width: 60px; }
