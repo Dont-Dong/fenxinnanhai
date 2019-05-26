@@ -36,7 +36,7 @@
 
 	//foot位置自适应
 	// oFoot.style.top = parseInt(getComputedStyle(oRight)['height']) + parseInt(getComputedStyle(oBody)['top']) + 'px';
-	oFoot.style.top = '1100px';
+	oFoot.style.top = '1350px';
 	//foot底部页数定位
 	var oFootUl = oFoot.getElementsByTagName('ul')[0];
 	oFootUl.style.marginLeft = ( - ( parseInt(getComputedStyle(oFootUl)['width']) / 2  ) ) + 'px';
