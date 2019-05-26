@@ -1,7 +1,8 @@
 
 *{ margin: 0; padding: 0; }
 li{ list-style-type: none; }
-#bigBackground{ width: 100%; height: 800px; background: url("../img/bigBackground.png"); position: fixed;z-index: -99;background-size: cover; }
+html, body{ width: 100%; height: 100%; }
+#bigBackground{ width: 100%; height: 100%; background: url("../img/bigBackground.png"); position: fixed;z-index: -99;background-size: cover; }
 
 #head{ padding: 10px; color: #fff; font-size: 23px; font-weight: bold; position: relative;/* background: red;*/ }
 #head span{ position: absolute; left: 20px; }
@@ -9,15 +10,21 @@ li{ list-style-type: none; }
 #head a{ position: absolute; right: 10px; color: #fff; text-decoration: none; }
 #head input{ width: 180px; height: 26px; color: #bbb; border: 3px solid #fff; position: absolute; right: 70px; }
 
-#body{ position: relative; top:320px; background: #fff; }
+#body{ position: relative; top:320px; padding: 20px; }
 
-#left{ position: relative;width: 280px; height: 280px; border: 1px solid #aaa; padding: 10px; }
-#left li{  }
+#left{ position: absolute; left: 50%; margin-left: -600px;  width: 280px; padding: 10px; }
+#left li{ width: 240px; height: 180px; }
 
-#right{ position: relative; width: 1000px; padding: 10px; }
-#right li{  width:240px; height:280px; border: 1px solid #aaa; display: inline-block; }
+#right{ position: absolute; left: 50%; margin-left: -300px; width: 890px; padding: 10px; word-break: break-all; }
+#right li{  position: relative; width:240px; height:280px; margin-right: 10px;  display: inline-block; }
+#right li a{ position: absolute; right: 21px; bottom: 15px; color: #000; }
 
-#foot{  position: relative; top: 600px; padding: 10px; border: 1px solid red; }
+#left li, #right li{ margin-bottom: 10px; border-radius: 5px; background: #fff; box-shadow: 2px 2px 5px #666;padding: 20px; overflow: hidden; }
+#left li h3,#right li h3{ font-size: 20px; }
+#left li p,#right li p{ margin-top: 10px; }
+
+#foot{ position: relative; padding: 10px; }
 #foot ul{ position: absolute; left: 50%; display: inline-block; }
-#foot li{ width: 30px; height: 30px; background: #fff; border: 1px solid #aaa; text-align: center; line-height: 30px; display: inline-block; }
+#foot li{ width: 30px; height: 30px; background: #fff; border: 1px solid #aaa; box-shadow: 2px 2px 3px #666; text-align: center; line-height: 30px; display: inline-block; }
+#foot li:hover{ cursor: pointer; }
 #foot .changePage{ width: 60px; }

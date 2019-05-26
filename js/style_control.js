@@ -32,16 +32,17 @@
 		oHead.style.height = getComputedStyle(oHead.children[0])['height'];
 	}
 	//body高度自适应
-	oBody.style.height = getComputedStyle(oLeft)['height'] > getComputedStyle(oRight)['height'] ? getComputedStyle(oLeft)['height'] : getComputedStyle(oRight)['height'];
+	oBody.style.height = getComputedStyle(oLeft)['height'] < getComputedStyle(oRight)['height'] ? getComputedStyle(oLeft)['height'] : getComputedStyle(oRight)['height'];
 
 	//foot位置自适应
-	// oFoot.style.top = parseInt(getComputedStyle(oBody)['height']) + parseInt(getComputedStyle(oBody)['top']) + 'px';
+	// oFoot.style.top = parseInt(getComputedStyle(oRight)['height']) + parseInt(getComputedStyle(oBody)['top']) + 'px';
+	oFoot.style.top = '1100px';
 	//foot底部页数定位
 	var oFootUl = oFoot.getElementsByTagName('ul')[0];
 	oFootUl.style.marginLeft = ( - ( parseInt(getComputedStyle(oFootUl)['width']) / 2  ) ) + 'px';
 	//foot高度自适应
 	oFoot.style.height = getComputedStyle(oFootUl)['height'];
-	console.log( 'oBody:'+ getComputedStyle(oBody)['height']);
+	// console.log('height:' + getComputedStyle(oRight)['height']);
 
 	//背景模糊
 	var blur = 0;
@@ -52,4 +53,17 @@
 			blur = Math.round(blur*100)/100;
 			oBigBackground.style.filter = 'blur('+blur+'px)';
 		}
+	}
+	//right文章字数限制
+	var p = oRight.getElementsByTagName('p');
+	for( var i = 0; i < p.length; i++ ) {
+		p[i].innerText = p[i].innerText.slice(0,140) + '......';
+	}
+	document.onclick = function() {
+
+		// window.location.href = '#';
+		
+		// console.log(window.history.length);
+		// var stateObj = { foo: "bar"};
+		// history.pushState(stateObj, "", "page/page_1/index.html");
 	}
