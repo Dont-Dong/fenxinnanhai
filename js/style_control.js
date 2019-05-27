@@ -8,13 +8,18 @@
 	var oFoot = document.getElementById('foot');
 
 	//head文字下划线动画
-	var underLine = oHead.children[0];
-	underLine.onmouseover = function() {
-		underLine.nextElementSibling.style.width = '94px';
+	var Home = oHead.children[0];
+	Home.onmouseover = function() {
+		Home.nextElementSibling.style.width = '94px';
 	}
-	underLine.onmouseout = function() {
-		underLine.nextElementSibling.style.width = '0';
+	Home.onmouseout = function() {
+		Home.nextElementSibling.style.width = '0';
 	}
+	//点击head返回首页
+	Home.onclick = function(){
+		window.location = '';
+	}
+
 	//head搜索框
 	var searchBox = oHead.children[2];
 	searchBox.onfocus = function(){
