@@ -17,7 +17,9 @@ html, body{ width: 100%; height: 100%; }
 
 #right{ position: absolute; left: 50%; margin-left: -300px; width: 890px; padding: 10px; word-break: break-all; }
 #right li{  position: relative; width:240px; height:280px; margin-right: 10px;  display: inline-block; }
-#right li a{ position: absolute; right: 21px; bottom: 15px; color: #000; }
+#right li h3{ display: inline-block; }
+#right li i{ position: absolute; right: 21px; bottom: 15px; color: #000; text-decoration: underline; }
+#right li img{ width: 100%; height: 60%; margin-top: 25px; box-shadow: 2px 2px 2px #666;/*border-bottom: 2px solid #eee;*/ }
 
 #left li, #right li{ margin-bottom: 10px; border-radius: 5px; background: #fff; box-shadow: 2px 2px 5px #666;padding: 20px; overflow: hidden; }
 #left li h3,#right li h3{ font-size: 20px; }
@@ -26,5 +28,5 @@ html, body{ width: 100%; height: 100%; }
 #foot{ position: relative; padding: 10px; }
 #foot ul{ position: absolute; left: 50%; display: inline-block; }
 #foot li{ width: 30px; height: 30px; background: #fff; border: 1px solid #aaa; box-shadow: 2px 2px 3px #666; text-align: center; line-height: 30px; display: inline-block; }
-#foot li:hover{ cursor: pointer; }
+#right li h3:hover,#right li p:hover,#right li img:hover,#right li i:hover,#foot li:hover{ cursor: pointer; }
 #foot .changePage{ width: 60px; }

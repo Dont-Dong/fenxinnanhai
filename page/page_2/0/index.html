@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style>
+		ul{ list-style-type:none; }
+		*{ margin:0;padding:0; }
+		input{ outline:none; }
+		a{  }
+		/*.box{ background:url(img/51040304_p0.jpg) no-repeat fixed;background-size:100%;position:relative; }*/
+		#header{ overflow:hidden; position:relative; width:100%; height:32px;padding: 12px 0 0 12px; }
+		#header ul{ position: absolute; right: 10px; }
+		#header li{ float:left;font-size:13px;color:rgb(250,250,250);line-height:32px; }
+		#header a{ color: #000; }
+		#header a:hover{ color:#1A26E1; }
+		#header .title2 li{ margin-right:22px;font-weight:bold; }
+		#header .noBlod{ font-weight: normal; }
+		#header .more{ width: 70px; height: 24px; margin-top: 3px; background:#0099ff;color:#fff;font-size:13px;text-align: center; line-height:24px;text-decoration:none; display: inline-block; }
+		
+		#content,#content,#content .text,#content .logo,#content .camera,#content .submit,#text,#list{ position:relative; }
+		#content{ top:120px;width:100%;height:150px; }
+		#content .logo{ left:50%;margin-left:-105px;width:210px;height:69px;;background:url(img/baidu_logo.png) no-repeat;background-size:90% 90%;display:inline-block; }
+
+		#content .text{ width:520px;height:33px;left:50%;top:35px;margin-left:-420px;padding: 0 20px 0 10px; border: 1px solid #aaa; }
+		#content .text:hover{ border-color:#888; }
+		#content .camera{ width:18px; height:16px; left:50%;top:39px;margin-left:-30px;background: url('img/camera.png') no-repeat; display: inline-block; }
+		#content .camera:hover{ background: url('img/camera_blue.png') no-repeat; }
+		#content .submit{ width:94px;height:35px;left:50%;top:37px;margin-left:1px;text-align:center;line-height:38px;background:#207BF6;font-size:14px;color:#fff;display:inline-block;text-decoration:none; }
+		#content .submit:hover{ background:#236ED4; }
+
+		#footer{ position:relative;text-align:center;margin-top:360px;padding-bottom:80px;width:100%;height:32px; }
+		#footer div{ margin-bottom: 10px;font-size:13px;color:#000;line-height:13px; }
+		#footer .code{ width: 60px; height: 80px; background: url(img/code.png) no-repeat; display:inline-block; }
+		#footer li{  margin-right:20px;display:inline; }
+		#footer a, #footer li{ font-size: 12px;color: #aaa; }
+
+		#list{ width: 550px; border: 1px solid #aaa; box-shadow:1px 1px #eee; left:50%; top:35px;margin-left:-311px; padding: 0; display: none;}
+		#list li{ height: 30px; background: #fff; list-style-type: none; margin: 0; padding: 3px; }
+		#list li a{ font-size: 13px;line-height:13px;color: #000; text-decoration: none; }
+		#list li:hover{ background: #eee; }
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div id="header">
+			<ul class="title2 fr">
+				<li><a href="#">新闻</a></li>
+				<li><a href="#">hao123</a></li>
+				<li><a href="#">地图</a></li>
+				<li><a href="#">视频</a></li>
+				<li><a href="#">贴吧</a></li>
+				<li><a href="#">学术</a></li>
+				<li><a href="#" class = "noBlod">登录</a></li>
+				<li><a href="#" class = "noBlod">设置</a></li>
+				<a href="#" class="more">更多产品</a>
+			</ul>
+		</div>
+		<div id="content">
+			<a href="#" class="logo"></a>
+			<input class="text" type="text" id = "text">
+			<a href="#" class = "camera"></a>
+			<a href="#" class="submit" id = "btn">百度一下</a>
+			<ul id = "list"></ul>
+		</div>
+		<div id="footer">
+			<div class="code"></div>
+			<div>百度</div>
+			<div>
+				<ul id="ul1">
+					<li><a href="#">把百度设为首页</a></li>
+					<li><a href="#">关于百度</a></li>
+					<li><a href="#">About  Baidu</a></li>
+					<li><a href="#">百度推广</a></li>
+				</ul>
+			</div> 
+			<div>
+				<ul id="ul2">
+					<li>©2019 Baidu</li>
+					<li><a href="#">使用百度前必读</a></li>
+					<li><a href="#">意见反馈</a></li>
+					<li>京ICP证030173号</li>
+					<li><a href="#">京公网安备11000002000001号</a></li>
+				</ul>
+			</div> 
+		</div>
+	</div>
+
+	<script src = "js/search.js"></script>
+</body>
+</html>

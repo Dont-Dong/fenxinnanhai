@@ -1,6 +1,23 @@
 
 ajax('get', 'Data/data.php', '', function(data) {
+
+	//data数据处理	Key: 	类型 /s uid /s 标题 
 	var data = JSON.parse(data);
+	var type = [];
+	var uid = [];
+	var title = [];
+	var contents = [];
+
+	for(var i = 0; i < data.length; i ++ ) {
+
+		for(var t in data[i]) {
+
+			type.push(t.split('/s')[0]);
+			uid.push(parseInt(t.split('/s')[1]));
+			title.push(t.split('/s')[2]);
+			contents.push(data[i][t]);
+		}
+	}
 
 	// foot页数控制
 	var oFoot = document.getElementById('foot');
@@ -9,7 +26,7 @@ ajax('get', 'Data/data.php', '', function(data) {
 	p = Math.ceil( data.length / 9);
 
 	for(var i = 0; i < p; i++ ) {
-
+  
 		var j = i + 1;
 		var li = document.createElement('li');
 		li.innerText = j;
@@ -25,7 +42,6 @@ ajax('get', 'Data/data.php', '', function(data) {
 	}
 	//异步修复、重新给foot底部页数定位
 	oFootUl.style.marginLeft = ( - ( parseInt(getComputedStyle(oFootUl)['width']) / 2  ) ) + 'px';
-
 
 	var oRight = document.getElementById('right');
 
@@ -44,7 +60,32 @@ ajax('get', 'Data/data.php', '', function(data) {
 		}
 	}
 
+	//文章链接跳转
+	var oRightli = oRight.getElementsByTagName('li');
+	var goData = 0;
 
+	for(var i = 0; i < oRightli.length; i++ ) {
+
+		oRightli[i].children[0].index = i;
+		oRightli[i].children[1].index = i;
+		oRightli[i].children[2].index = i;
+		oRightli[i].children[0].onclick = function() {
+
+			goData = this.index;
+			if( type[this.index] == 'article' ) {
+				//page_1是跳转到文章阅读页面
+				window.location = 'page/page_1' + '#' + uid[this.index];
+			} else if( type[this.index] == 'demo' ) {
+				//page_1是跳转到demo预览页面
+				window.location = 'page/page_2' + '/' + contents[this.index];
+			}
+		}
+		oRightli[i].children[1].onclick = oRightli[i].children[0].onclick;
+		oRightli[i].children[2].onclick = oRightli[i].children[0].onclick;
+	}
+
+
+	//文章页数刷新
 	function refreshData(p){
 
 		// 设置一些控制文章显示数量的属性
@@ -64,23 +105,29 @@ ajax('get', 'Data/data.php', '', function(data) {
 			pageMixData = pageMaxData + (data.length%len);
 
 		}
-		console.log(p+':'+pageMixData+':'+pageMaxData);
+		// console.log(p+':'+pageMixData+':'+pageMaxData);
 		
 		// 将php的文章内容添加到html文档
 		for(var i = 0 + pageMixData - len; i < pageMaxData; i++ ) {
 
 			var html = '';
-			var k = '';
-			varv = '';
+			var k = title[i];
+			var v = contents[i];
 
-			for(var p in data[i]) {
+			//right文章的标题和简述字数限制
+			k = k.length > 26 ? k.slice(0,26) + '...' : k;
+			if( type[i] == 'article' ) {
 
-				k = p;
-				v = data[i][p];
+				//如果是文章类型就添加文章卡片
+				v = v.length > 140 ? v.slice(0,140) + '......' : v;
+				html = '<li><h3>'+k+'</h3><p>'+v+'</p><i>>更多</i></li>';
+			} else if ( type[i] == 'demo' ) {
 
-				v = v.slice(0,140) + '......';
+				//如果是demo类型就添加demo卡片
+				k = k.length > 10 ? k.slice(0,10) + '...' : k;
+				html = '<li><h3>'+k+'</h3><img src = img/thumb/th_'+v+'.png />'+'<i>>预览</i></li>';
 			}
-			html = '<li><h3>'+k+'</h3><p>'+v+'</p><a href="#" rel = "更多">>更多</a></li>'
+
 			oRight.innerHTML += html;
 		}
 	}

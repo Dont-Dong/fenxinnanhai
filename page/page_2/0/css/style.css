@@ -1,0 +1,34 @@
+ul{ list-style-type:none; }
+*{ margin:0;padding:0; }
+input{ outline:none; }
+a{  }
+#header{ overflow:hidden; position:relative; width:100%; height:32px;padding: 12px 0 0 12px; }
+#header ul{ position: absolute; right: 10px; }
+#header li{ float:left;font-size:13px;color:rgb(250,250,250);line-height:32px; }
+#header a{ color: #000; }
+#header a:hover{ color:#1A26E1; }
+#header .title2 li{ margin-right:22px;font-weight:bold; }
+#header .noBlod{ font-weight: normal; }
+#header .more{ width: 70px; height: 24px; margin-top: 3px; background:#0099ff;color:#fff;font-size:13px;text-align: center; line-height:24px;text-decoration:none; display: inline-block; }
+
+#content,#content,#content .text,#content .logo,#content .camera,#content .submit,#text,#list{ position:relative; }
+#content{ top:120px;width:100%;height:150px; }
+#content .logo{ left:50%;margin-left:-105px;width:210px;height:69px;;background:url('img/baidu_logo.png') no-repeat;background-size:90% 90%;display:inline-block; }
+
+#content .text{ width:520px;height:33px;left:50%;top:35px;margin-left:-420px;padding: 0 20px 0 10px; border: 1px solid #aaa; }
+#content .text:hover{ border-color:#888; }
+#content .camera{ width:18px; height:16px; left:50%;top:39px;margin-left:-30px;background: url('img/camera.png') no-repeat; display: inline-block; }
+#content .camera:hover{ background: url('img/camera_blue.png') no-repeat; }
+#content .submit{ width:94px;height:35px;left:50%;top:37px;margin-left:1px;text-align:center;line-height:38px;background:#207BF6;font-size:14px;color:#fff;display:inline-block;text-decoration:none; }
+#content .submit:hover{ background:#236ED4; }
+
+#footer{ position:relative;text-align:center;margin-top:360px;padding-bottom:80px;width:100%;height:32px; }
+#footer div{ margin-bottom: 10px;font-size:13px;color:#000;line-height:13px; }
+#footer .code{ width: 60px; height: 80px; background: url(img/code.png) no-repeat; display:inline-block; }
+#footer li{  margin-right:20px;display:inline; }
+#footer a, #footer li{ font-size: 12px;color: #aaa; }
+
+#list{ width: 550px; border: 1px solid #aaa; box-shadow:1px 1px #eee; left:50%; top:35px;margin-left:-311px; padding: 0; display: none;}
+#list li{ height: 30px; background: #fff; list-style-type: none; margin: 0; padding: 3px; }
+#list li a{ font-size: 13px;line-height:13px;color: #000; text-decoration: none; }
+#list li:hover{ background: #eee; }

@@ -4,6 +4,7 @@
 	var oBody = document.getElementById('body');
 	var oLeft = document.getElementById('left');
 	var oRight = document.getElementById('right');
+	var oRightUl = oRight.getElementsByTagName('ul')[0];
 	var oFoot = document.getElementById('foot');
 
 	//head文字下划线动画
@@ -17,6 +18,7 @@
 	//head搜索框
 	var searchBox = oHead.children[2];
 	searchBox.onfocus = function(){
+
 		if( searchBox.value == '新世界的大门...' ) {
 			searchBox.value = '';
 		}
@@ -47,6 +49,7 @@
 	//背景模糊
 	var blur = 0;
 	document.onscroll = function(ev) {
+
 		var pos = oBody.getBoundingClientRect();
 		if( pos.top > 0 ) {
 			blur = ( ( 320 - pos.top ) / 320 ) * 10;
@@ -54,16 +57,4 @@
 			oBigBackground.style.filter = 'blur('+blur+'px)';
 		}
 	}
-	//right文章字数限制
-	var p = oRight.getElementsByTagName('p');
-	for( var i = 0; i < p.length; i++ ) {
-		p[i].innerText = p[i].innerText.slice(0,140) + '......';
-	}
-	document.onclick = function() {
 
-		// window.location.href = '#';
-		
-		// console.log(window.history.length);
-		// var stateObj = { foo: "bar"};
-		// history.pushState(stateObj, "", "page/page_1/index.html");
-	}
