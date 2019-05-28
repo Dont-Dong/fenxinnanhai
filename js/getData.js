@@ -116,14 +116,20 @@ ajax('get', 'Data/data.php', '', function(data) {
 
 			//right文章的标题和简述字数限制
 			k = k.length > 26 ? k.slice(0,26) + '...' : k;
+
+			//如果是文章类型就添加文章卡片
 			if( type[i] == 'article' ) {
 
-				//如果是文章类型就添加文章卡片
+				//处理文章在卡片上展示的内容和格式。。。
 				v = v.length > 140 ? v.slice(0,140) + '......' : v;
+				v = v.replace(/<br><br>/g, ' ');
+				v = limitBr(v);
 				html = '<li><h3>'+k+'</h3><p>'+v+'</p><i>>更多</i></li>';
-			} else if ( type[i] == 'demo' ) {
+			} 
+			//如果是demo类型就添加demo卡片
+			else if ( type[i] == 'demo' ) {
 
-				//如果是demo类型就添加demo卡片
+				//处理demo在卡片上展示的内容和格式。。。
 				k = k.length > 10 ? k.slice(0,10) + '...' : k;
 				html = '<li><h3>'+k+'</h3><img src = img/thumb/th_'+v+'.png />'+'<i>>预览</i></li>';
 			}

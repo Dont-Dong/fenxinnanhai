@@ -53,3 +53,33 @@ function promptDisplay(obj,text){
 		}
 	}
 }
+
+//限制字符串内只存在第一第二次出现的 <br> 字符串
+function limitBr(str){
+
+	var str = str;
+	var str1 = '';
+	var str2 = '';
+	var t = 0;
+
+	for(var i = 0; i < str.length; i++ ) {
+		if( str[i] == '<' && str.slice(i+1, i+4) == 'br>'){
+			t += 1;
+		}
+		if( t > 1) {
+			str2 += str[i];
+		}
+		if( t > 1 && str1 == '') {
+			str1 = str.slice(0,i+4);
+		} else continue;
+	}
+
+	if( t < 2 ){
+		return str;
+	}
+
+	str2 = str2.replace(/<br>/g, ' ');
+	str = str1 + str2;
+
+	return str;
+}

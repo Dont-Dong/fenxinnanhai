@@ -4,6 +4,7 @@
 	var oData = document.getElementById('data');
 	var page = parseInt(window.location.hash.slice(1,2));
 	var oLyb = document.getElementById('lyb');
+	var oTitle = document.getElementsByTagName('title')[0];
 
 	//head文字下划线动画
 	var Home = oHead.children[0];
@@ -26,6 +27,8 @@
 	var text = oLyb.children[0];
 	promptDisplay(text, '留下点什么吧...');
 
+	
+	
 	//设置文章内容
 	ajax('get', 'data.php', '', function(data){
 	
@@ -51,5 +54,6 @@
 		oData.children[0].innerText = title[page];
 		oData.children[2].innerHTML = contents[page];
 
-		// console.log(page)
+		//设置网页标题
+		oTitle.innerText = title[page];
 	});
